@@ -1,4 +1,10 @@
-export default function Button ({id, name, className, disabled, onClick}) {
+export default function Button({
+                                   id,
+                                   name,
+                                   className,
+                                   disabled,
+                                   onClick
+                               }: { id?: string, name: string, className: string, disabled?: boolean, onClick?: any }) {
     return (
         <button
             id={id}

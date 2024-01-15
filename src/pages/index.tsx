@@ -6,7 +6,7 @@ const userStoryClassName = "inline-flex items-center justify-center rounded-md t
 const optionsClassName = "inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary-foreground h-10 px-4 py-2 bg-blue-600 hover:bg-gray-300 active:bg-blue-300";
 
 class Component extends React.Component<any, any> {
-    constructor(props) {
+    constructor(props: any) {
         super(props);
         this.state = {
             userStoryId: false,
@@ -26,7 +26,7 @@ class Component extends React.Component<any, any> {
 
     }
 
-    onButtonClick(buttonId) {
+    onButtonClick(buttonId: string) {
         const prevValue = this.state[buttonId];
         this.setState({
             [buttonId]: !prevValue,
@@ -98,7 +98,6 @@ class Component extends React.Component<any, any> {
                                         className="flex h-10 rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 w-2/3"
                                         id="role"
                                         placeholder="Enter the role for who you are writing the Story"
-                                        required=""
                                     />
                                 </div>
                                 <div className="flex space-x-4">
@@ -112,7 +111,6 @@ class Component extends React.Component<any, any> {
                                         className="flex min-h-[80px] rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 w-2/3"
                                         id="why"
                                         placeholder="Enter a brief description of the story"
-                                        required=""
                                     ></textarea>
                                 </div>
                                 <div className="flex space-x-4">
@@ -126,7 +124,6 @@ class Component extends React.Component<any, any> {
                                         className="flex min-h-[80px] rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 w-2/3"
                                         id="benefit"
                                         placeholder="Describe the customer's benefit"
-                                        required=""
                                     ></textarea>
                                 </div>
                                 <div className="flex space-x-4">
@@ -140,7 +137,6 @@ class Component extends React.Component<any, any> {
                                         className="flex min-h-[80px] rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 w-2/3"
                                         id="additional"
                                         placeholder="Enter any additional content or visuals"
-                                        required=""
                                     ></textarea>
                                 </div>
                                 <span className="underline cursor-pointer hover:text-blue-500"
