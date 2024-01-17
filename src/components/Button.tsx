@@ -8,7 +8,7 @@ export default function Button({
     return (
         <button
             id={id}
-            className={className + (disabled ? " opacity-50 " : "")} onClick={onClick} type="button">
+            className={className + (disabled ? " opacity-50 disabled-button" : "")} onClick={onClick} type="button">
             {name}
         </button>
     )
