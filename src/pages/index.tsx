@@ -1,71 +1,40 @@
-import Button from "@/components/Button";
 import React from "react";
-
-const epicClassName = "inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 h-10 px-4 py-2 bg-violet-500 text-white";
-const userStoryClassName = "inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 h-10 px-4 py-2 bg-green-500 text-white";
-const optionsClassName = "inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary-foreground h-10 px-4 py-2 bg-blue-600 hover:bg-gray-300 active:bg-blue-300";
+import Feature from "@/components/Feature";
+import Output from "@/components/Output";
 
 class Component extends React.Component<any, any> {
     constructor(props: any) {
         super(props);
         this.state = {
-            userStoryId: false,
-            acceptanceCriteria: false,
-            descriptionId: false,
-            titleId: false,
-            nameId: false,
-            labelsId: false,
-            domainsId: false,
-            applicationsId: false,
-            allSelected: false,
-            created: false
+            created: false,
+            featuresCounter: 1
         };
-        this.onButtonClick = this.onButtonClick.bind(this);
-        this.onSelect = this.onSelect.bind(this);
         this.onCreate = this.onCreate.bind(this);
+        this.onAdd = this.onAdd.bind(this);
+        this.onDelete = this.onDelete.bind(this);
 
     }
 
-    onButtonClick(buttonId: string) {
-        const prevValue = this.state[buttonId];
+    onAdd() {
         this.setState({
-            [buttonId]: !prevValue,
-            created: false
+            featuresCounter: this.state.featuresCounter + 1
         })
     }
 
-    onSelect() {
-        this.setState(this.state.allSelected ?
-            {
-                userStoryId: false,
-                acceptanceCriteriaId: false,
-                descriptionId: false,
-                titleId: false,
-                nameId: false,
-                labelsId: false,
-                domainsId: false,
-                applicationsId: false,
-                allSelected: false,
-                created: false
-            } :
-            {
-                userStoryId: true,
-                acceptanceCriteriaId: true,
-                descriptionId: true,
-                titleId: true,
-                nameId: true,
-                labelsId: true,
-                domainsId: true,
-                applicationsId: true,
-                allSelected: true,
-                created: false
-            })
+    onDelete() {
+        this.setState({
+            featuresCounter: this.state.featuresCounter -1
+        })
     }
 
     onCreate() {
         this.setState({
             created: true
         })
+    }
+
+    generateArray() {
+        return Array.from({length: this.state.featuresCounter}, (_, i) => i + 1);
     }
 
     render() {
@@ -75,161 +44,68 @@ class Component extends React.Component<any, any> {
                     <div className="flex flex-col items-center space-y-4 text-center">
                         <div className="space-y-2">
                             <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
-                                GenAI powered Epic and User Story Generator
+                                GenAI powered JIRA Generator
                             </h1>
-                            <div className="w-full flex justify-center space-x-4 mb-8">
-                                <Button name="Epic" className={epicClassName}/>
-                                <Button name="User Story" className={userStoryClassName}/>
+                            <div className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
+                                Create your feature
                             </div>
-                            <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
-                                Please fill in the details below
-                            </p>
                         </div>
                         <div className="w-full max-w-sm space-y-2">
                             <form className="flex flex-col space-y-4">
                                 <div className="flex space-x-4">
                                     <label
                                         className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 w-1/3 text-left"
-                                        htmlFor="role"
+                                        htmlFor="tribe"
                                     >
-                                        Role
+                                        Tribe
                                     </label>
                                     <input
                                         className="flex h-10 rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 w-2/3"
-                                        id="role"
-                                        placeholder="Enter the role for who you are writing the Story"
+                                        id="tribe"
+                                        placeholder="Enter the tribe"
                                     />
                                 </div>
                                 <div className="flex space-x-4">
                                     <label
                                         className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 w-1/3 text-left"
-                                        htmlFor="why"
+                                        htmlFor="competence"
                                     >
-                                        Why
+                                        Competence
                                     </label>
-                                    <textarea
-                                        className="flex min-h-[80px] rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 w-2/3"
-                                        id="why"
-                                        placeholder="Enter a brief description of the story"
-                                    ></textarea>
+                                    <input
+                                        className="flex h-10 rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 w-2/3"
+                                        id="competence"
+                                        placeholder="Enter the competence"
+                                    />
                                 </div>
                                 <div className="flex space-x-4">
                                     <label
                                         className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 w-1/3 text-left"
-                                        htmlFor="benefit"
+                                        htmlFor="placeholder"
                                     >
-                                        Benefit
+                                        Placeholder
                                     </label>
-                                    <textarea
-                                        className="flex min-h-[80px] rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 w-2/3"
-                                        id="benefit"
-                                        placeholder="Describe the customer's benefit"
-                                    ></textarea>
+                                    <input
+                                        className="flex h-10 rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 w-2/3"
+                                        id="placeholder"
+                                        placeholder="Enter the placeholder"
+                                    />
                                 </div>
-                                <div className="flex space-x-4">
-                                    <label
-                                        className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 w-1/3 text-left"
-                                        htmlFor="additional"
-                                    >
-                                        Additional Content/Visual
-                                    </label>
-                                    <div className="flex min-h-[80px] rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 w-2/3 light:hover:bg-gray-400 light:bg-gray-700 hover:bg-gray-100 light:border-gray-600 light:hover:border-gray-500 light:hover:bg-gray-600">
-                                        <label htmlFor="dropzone-file"
-                                               className="flex flex-col items-center justify-center w-full h-64 rounded-lg cursor-pointer bg-white-50">
-                                            <div className="flex flex-col items-center justify-center pt-5 pb-6">
-                                                <svg className="w-8 h-10 mb-3 text-gray-400" fill="none"
-                                                     stroke="currentColor" viewBox="0 0 24 24"
-                                                     xmlns="http://www.w3.org/2000/svg">
-                                                    <path strokeLinecap="round" strokeLinejoin="round"
-                                                          strokeWidth="2"
-                                                          d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
-                                                </svg>
-                                                <p className="mb-2 text-sm text-gray-500 dark:text-gray-400"><span
-                                                    className="font-semibold">Click to upload</span> or drag and drop
-                                                </p>
-                                                <p className="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or
-                                                    GIF (MAX. 800x400px)</p>
-                                            </div>
-                                            <input id="dropzone-file" type="file" className="hidden"/>
-                                        </label>
-                                    </div>
-                                </div>
-                                <span className="underline cursor-pointer hover:text-blue-500"
-                                      onClick={this.onSelect}>{this.state.allSelected ? 'Deselect all' : 'Select all'}</span>
-                                <div className="grid grid-cols-3 gap-4">
-                                    <Button id="userStoryId" disabled={this.state.userStoryId} name="User Story"
-                                            className={optionsClassName}
-                                            onClick={() => this.onButtonClick("userStoryId")}/>
-                                    <Button id="acceptanceCriteriaId" disabled={this.state.acceptanceCriteriaId}
-                                            name="Acceptance Criteria" className={optionsClassName}
-                                            onClick={() => this.onButtonClick("acceptanceCriteriaId")}/>
-                                    <Button id="descriptionId" disabled={this.state.descriptionId} name="Description"
-                                            className={optionsClassName}
-                                            onClick={() => this.onButtonClick("descriptionId")}/>
-                                    <Button id="titleId" disabled={this.state.titleId} name="Title"
-                                            className={optionsClassName} onClick={() => this.onButtonClick("titleId")}/>
-                                    <Button id="nameId" disabled={this.state.nameId} name="Name"
-                                            className={optionsClassName} onClick={() => this.onButtonClick("nameId")}/>
-                                    <Button id="labelsId" disabled={this.state.labelsId} name="Labels"
-                                            className={optionsClassName}
-                                            onClick={() => this.onButtonClick("labelsId")}/>
-                                    <Button id="domainsId" disabled={this.state.domainsId} name="Domains"
-                                            className={optionsClassName}
-                                            onClick={() => this.onButtonClick("domainsId")}/>
-                                    <Button id="applicationsId" disabled={this.state.applicationsId} name="Applications"
-                                            className={optionsClassName}
-                                            onClick={() => this.onButtonClick("applicationsId")}/>
-                                </div>
+                                {this.generateArray().map((featureId, i, row) =>
+                                    (<Feature id={featureId} isFirst={row.length === 1} isLast={i + 1 === row.length} onDelete={this.onDelete} onAdd={this.onAdd}/>))}
+
                                 <button type="button" onClick={this.onCreate}
-                                    className="create-button inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2"
+                                        className="create-button inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2"
                                 >
                                     Create
                                 </button>
+                                <hr/>
                             </form>
                         </div>
                         {this.state.created ?
                             <>
                                 <h2 className="text-2xl font-bold mt-8">Output</h2>
-                                <div className="w-full max-w-sm mt-4 bg-gray-800 text-white p-4 rounded-lg overflow-auto">
-                                    <pre className="whitespace-pre-wrap text-sm font-mono">
-                                      <code>
-                                        <div className="space-y-2">
-                                          <div className="w-full">
-                                            <p className="text-left">
-                                              <strong>Epic Name:</strong>
-                                              Epic 1
-                                            </p>
-                                          </div>
-                                          <div className="w-full">
-                                            <p className="text-left">
-                                              <strong>Story:</strong>
-                                              As a user, I want to be able to create epics so that I can manage my projects better.
-                                            </p>
-                                          </div>
-                                          <div className="w-full">
-                                            <p className="text-left">
-                                              <strong>Description:</strong>
-                                              This epic is about creating a feature for managing projects. It includes creating, updating, and
-                                              deleting epics.
-                                            </p>
-                                          </div>
-                                          <div className="w-full">
-                                            <p className="text-left">
-                                              <strong>Acceptance Criteria:</strong>
-                                              The user should be able to create, update, and delete epics. All changes should be saved and
-                                              visible immediately.
-                                            </p>
-                                          </div>
-                                          <div className="w-full">
-                                            <p className="text-left">
-                                              <strong>Labels:</strong>
-                                              Epic, Project Management
-                                            </p>
-                                          </div>
-                                        </div>
-                                      </code>
-                                    </pre>
-                                </div>
+                                {this.generateArray().map(featureId => <Output id={featureId}/>)}
                             </> : ""}
                     </div>
                 </div>
