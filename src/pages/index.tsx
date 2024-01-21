@@ -92,7 +92,7 @@ class Component extends React.Component<any, any> {
                                     />
                                 </div>
                                 {this.generateArray().map((featureId, i, row) =>
-                                    (<Feature id={featureId} isFirst={row.length === 1} isLast={i + 1 === row.length} onDelete={this.onDelete} onAdd={this.onAdd}/>))}
+                                    (<Feature key={featureId} id={featureId} isFirst={row.length === 1} isLast={i + 1 === row.length} onDelete={this.onDelete} onAdd={this.onAdd}/>))}
 
                                 <button type="button" onClick={this.onCreate}
                                         className="create-button inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2"
@@ -105,7 +105,7 @@ class Component extends React.Component<any, any> {
                         {this.state.created ?
                             <>
                                 <h2 className="text-2xl font-bold mt-8">Output</h2>
-                                {this.generateArray().map(featureId => <Output id={featureId}/>)}
+                                {this.generateArray().map(featureId => <Output key={featureId} id={featureId}/>)}
                             </> : ""}
                     </div>
                 </div>
