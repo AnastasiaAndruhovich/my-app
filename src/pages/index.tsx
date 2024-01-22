@@ -17,13 +17,15 @@ class Component extends React.Component<any, any> {
 
     onAdd() {
         this.setState({
-            featuresCounter: this.state.featuresCounter + 1
+            featuresCounter: this.state.featuresCounter + 1,
+            created: false
         })
     }
 
     onDelete() {
         this.setState({
-            featuresCounter: this.state.featuresCounter -1
+            featuresCounter: this.state.featuresCounter -1,
+            created: false
         })
     }
 
@@ -49,6 +51,9 @@ class Component extends React.Component<any, any> {
                             <div className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
                                 Create your feature
                             </div>
+                            <p className="mx-auto max-w-[400px] text-gray-500 md:text-sm dark:text-gray-400">
+                                Please enter for which Tribe you are writing the feature and for which Business Requirement (RCM Number) as well as Capability
+                            </p>
                         </div>
                         <div className="w-full max-w-sm space-y-2">
                             <form className="flex flex-col space-y-4">
@@ -68,29 +73,58 @@ class Component extends React.Component<any, any> {
                                 <div className="flex space-x-4">
                                     <label
                                         className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 w-1/3 text-left"
-                                        htmlFor="competence"
+                                        htmlFor="businessRequirement"
                                     >
-                                        Competence
+                                        Business Requirement
                                     </label>
                                     <input
                                         className="flex h-10 rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 w-2/3"
-                                        id="competence"
-                                        placeholder="Enter the competence"
+                                        id="businessRequirement"
+                                        placeholder="Enter RCM-Number"
                                     />
                                 </div>
                                 <div className="flex space-x-4">
                                     <label
                                         className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 w-1/3 text-left"
-                                        htmlFor="placeholder"
+                                        htmlFor="capability"
                                     >
-                                        Placeholder
+                                        Capability
                                     </label>
                                     <input
                                         className="flex h-10 rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 w-2/3"
-                                        id="placeholder"
-                                        placeholder="Enter the placeholder"
+                                        id="capability"
+                                        placeholder="Enter TMTC-Number"
                                     />
                                 </div>
+                                <div className="flex space-x-4">
+                                    <label
+                                        className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 w-1/3 text-left"
+                                        htmlFor="plannedStartDate"
+                                    >
+                                        Planned BRP Start
+                                    </label>
+                                    <input
+                                        className="flex h-10 rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 w-2/3"
+                                        id="plannedStartDate"
+                                        placeholder="Enter Start Date"
+                                    />
+                                </div>
+                                <div className="flex space-x-4">
+                                    <label
+                                        className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 w-1/3 text-left"
+                                        htmlFor="brands"
+                                    >
+                                        Brands
+                                    </label>
+                                    <input
+                                        className="flex h-10 rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 w-2/3"
+                                        id="brands"
+                                        placeholder="Enter Brands"
+                                    />
+                                </div>
+                                <p className="mx-auto max-w-[500px] text-gray-500 md:text-sm dark:text-gray-400">
+                                    Please enter the relevant content from the Business Requirements (from Jira) that you need for this Feature
+                                </p>
                                 {this.generateArray().map((featureId, i, row) =>
                                     (<Feature key={featureId} id={featureId} isFirst={row.length === 1} isLast={i + 1 === row.length} onDelete={this.onDelete} onAdd={this.onAdd}/>))}
 

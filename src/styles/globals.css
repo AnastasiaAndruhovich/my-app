@@ -21,10 +21,6 @@
   color: WHITE;
 }
 
-.disabled-button {
-  background-color: #f5f5f5;
-}
-
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
