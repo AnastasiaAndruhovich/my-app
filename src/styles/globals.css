@@ -21,6 +21,10 @@
   color: WHITE;
 }
 
+.date-input {
+  color: #a8aeb8
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(

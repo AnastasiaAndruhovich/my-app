@@ -48,10 +48,11 @@ class Component extends React.Component<any, any> {
                             <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
                                 GenAI powered JIRA Generator
                             </h1>
-                            <div className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
+                            <div className="mx-auto max-w-[380px] text-gray-500 md:text-xl dark:text-gray-400">
                                 Create your feature
                             </div>
-                            <p className="mx-auto max-w-[400px] text-gray-500 md:text-sm dark:text-gray-400">
+                            <br/>
+                            <p className="mx-auto max-w-[380px] text-gray-500 md:text-sm dark:text-gray-400">
                                 Please enter for which Tribe you are writing the feature and for which Business Requirement (RCM Number) as well as Capability
                             </p>
                         </div>
@@ -67,7 +68,7 @@ class Component extends React.Component<any, any> {
                                     <input
                                         className="flex h-10 rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 w-2/3"
                                         id="tribe"
-                                        placeholder="Enter the tribe"
+                                        placeholder="Enter Tribe"
                                     />
                                 </div>
                                 <div className="flex space-x-4">
@@ -103,10 +104,9 @@ class Component extends React.Component<any, any> {
                                     >
                                         Planned BRP Start
                                     </label>
-                                    <input
-                                        className="flex h-10 rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 w-2/3"
+                                    <input type="date"
+                                        className="date-input flex h-10 rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 w-2/3"
                                         id="plannedStartDate"
-                                        placeholder="Enter Start Date"
                                     />
                                 </div>
                                 <div className="flex space-x-4">
@@ -122,7 +122,8 @@ class Component extends React.Component<any, any> {
                                         placeholder="Enter Brands"
                                     />
                                 </div>
-                                <p className="mx-auto max-w-[500px] text-gray-500 md:text-sm dark:text-gray-400">
+                                <br/>
+                                <p className="mx-auto max-w-[380px] text-gray-500 md:text-sm dark:text-gray-400">
                                     Please enter the relevant content from the Business Requirements (from Jira) that you need for this Feature
                                 </p>
                                 {this.generateArray().map((featureId, i, row) =>
