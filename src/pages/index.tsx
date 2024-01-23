@@ -53,7 +53,7 @@ class Component extends React.Component<any, any> {
                             </div>
                             <br/>
                             <p className="mx-auto max-w-[380px] text-gray-500 md:text-sm dark:text-gray-400">
-                                Please enter for which Tribe you are writing the feature and for which Business Requirement (RCM Number) as well as Capability
+                                Please specify the Tribe for which you are writing the feature, along with the corresponding Business Requirement (RCM Number) and Capability
                             </p>
                         </div>
                         <div className="w-full max-w-sm space-y-2">
