@@ -100,13 +100,13 @@ class Component extends React.Component<any, any> {
                                 <div className="flex space-x-4">
                                     <label
                                         className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 w-1/3 text-left"
-                                        htmlFor="plannedStartDate"
+                                        htmlFor="sprintStartDate"
                                     >
-                                        Planned BRP Start
+                                        Sprint Start
                                     </label>
                                     <input type="date"
                                         className="date-input flex h-10 rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 w-2/3"
-                                        id="plannedStartDate"
+                                        id="sprintStartDate"
                                     />
                                 </div>
                                 <div className="flex space-x-4">
@@ -120,6 +120,19 @@ class Component extends React.Component<any, any> {
                                         className="flex h-10 rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 w-2/3"
                                         id="brands"
                                         placeholder="Enter Brands"
+                                    />
+                                </div>
+                                <div className="flex space-x-4">
+                                    <label
+                                        className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 w-1/3 text-left"
+                                        htmlFor="affectedApplications"
+                                    >
+                                        Affected Applications
+                                    </label>
+                                    <input
+                                        className="flex h-10 rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 w-2/3"
+                                        id="affectedApplications"
+                                        placeholder="Enter Applications"
                                     />
                                 </div>
                                 <br/>

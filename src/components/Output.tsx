@@ -14,6 +14,16 @@ export default function Output({id}: { id: number}) {
               >
                 Regenerate
               </button>
+              <button type="button" onClick={() => {}}
+                      className="create-button whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 px-2 py-2"
+              >
+                Edit
+              </button>
+              <button type="button" onClick={() => {}}
+                      className="create-button whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 px-2 py-2"
+              >
+                Feedback
+              </button>
             </div>
           <div className="max-w-[290px] mt-4 bg-gray-800 text-white p-4 rounded-lg overflow-auto">
           <pre className="whitespace-pre-wrap text-sm font-mono">
