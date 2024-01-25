@@ -59,22 +59,20 @@ export default function Output({id}: { id: number}) {
               <div className="w-full">
                   <p className="text-left">
                     <strong>Mandatory Tasks (incl. Start & End): </strong>
-                    <ul>
-                      <li>Toggling Assessment (Sprint Start + 1 CW)</li>
-                      <li>Backwards Brands Compatibility (Sprint Start + 1 CW)</li>
-                      <li>Migration Assessment  (Sprint Start + 1 CW)</li>
-                      <li>Feature Scope Capture (Sprint Start + 2 CW)</li>
-                      <li>L4 Process (Sprint Start + 2 CW)</li>
-                      <li>US Backlog Creation (Sprint Start + 2 CW)</li>
-                      <li>UI Wireframes (Sprint Start + 4 CW)</li>
-                      <li>Branded UI Design (Sprint Start + 4 CW)</li>
-                      <li>Re-skin UI & Configuration (Sprint Start + 4 CW)</li>
-                      <li>SAD (Sprint Start + 4 CW)</li>
-                      <li>IFS Documentation (Sprint Start + 6 CW) - Application X</li>
-                      <li>AID Documentation (Sprint Start + 6 CW) - Application X</li>
-                      <li>SOX Compliance Check (Sprint Start + 8 CW)</li>
-                      <li>CO-EX Assessment (Sprint Start + 2 CW)</li>
-                    </ul>
+                    <br/>1. Toggling Assessment (Sprint Start + 1 CW)
+                    <br/>2. Backwards Brands Compatibility (Sprint Start + 1 CW)
+                    <br/>3. Migration Assessment  (Sprint Start + 1 CW)
+                    <br/>4. Feature Scope Capture (Sprint Start + 2 CW)
+                    <br/>5. L4 Process (Sprint Start + 2 CW)
+                    <br/>6. US Backlog Creation (Sprint Start + 2 CW)
+                    <br/>7. UI Wireframes (Sprint Start + 4 CW)
+                    <br/>8. Branded UI Design (Sprint Start + 4 CW)
+                    <br/>9. Re-skin UI & Configuration (Sprint Start + 4 CW)
+                    <br/>10. SAD (Sprint Start + 4 CW)
+                    <br/>11. IFS Documentation (Sprint Start + 6 CW) - Application X
+                    <br/>12. AID Documentation (Sprint Start + 6 CW) - Application X
+                    <br/>13. SOX Compliance Check (Sprint Start + 8 CW)
+                    <br/>14. CO-EX Assessment (Sprint Start + 2 CW)
                   </p>
                 </div>
                   <div className="w-full">
