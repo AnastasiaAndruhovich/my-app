@@ -21,7 +21,7 @@ export default function Feature({
                 <textarea
                     className="flex min-h-[40px] h-40 rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 w-2/3"
                     id={'feature' + id}
-                    placeholder="Description"/>
+                    placeholder="Please insert here the description from the Business Requirement"/>
                 <div
                     className="flex min-h-[40px] h-40 rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 w-2/3 light:hover:bg-gray-400 light:bg-gray-700 hover:bg-gray-100 light:border-gray-600 light:hover:border-gray-500 light:hover:bg-gray-600">
                     <label htmlFor="dropzone-file"
@@ -37,6 +37,7 @@ export default function Feature({
                             <p className="mb-2 text-sm text-gray-500 dark:text-gray-400"><span
                                 className="font-semibold">Click to upload</span> or drag and drop
                             </p>
+                            <p className="text-xs text-gray-500 dark:text-gray-400">DOCX, PDF, XLSX, JPG or PNG</p>
                         </div>
                         <input id={'file' + id} type="file" className="hidden"/>
                     </label>

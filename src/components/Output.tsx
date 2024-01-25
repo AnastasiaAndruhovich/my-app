@@ -59,10 +59,22 @@ export default function Output({id}: { id: number}) {
               <div className="w-full">
                   <p className="text-left">
                     <strong>Mandatory Tasks (incl. Start & End): </strong>
-                    <br/>1. User stories refined and in status “READY” (DD/MM/YYYY)
-                    <br/>2. UX refined and accepted (DD/MM/YYYY)
-                    <br/>3. Initial Solution Design and proposed impacted Components accepted (DD/MM/YYYY)
-                    <br/>4. Joint Refinement done (DD/MM/YYYY)
+                    <ul>
+                      <li>Toggling Assessment (Sprint Start + 1 CW)</li>
+                      <li>Backwards Brands Compatibility (Sprint Start + 1 CW)</li>
+                      <li>Migration Assessment  (Sprint Start + 1 CW)</li>
+                      <li>Feature Scope Capture (Sprint Start + 2 CW)</li>
+                      <li>L4 Process (Sprint Start + 2 CW)</li>
+                      <li>US Backlog Creation (Sprint Start + 2 CW)</li>
+                      <li>UI Wireframes (Sprint Start + 4 CW)</li>
+                      <li>Branded UI Design (Sprint Start + 4 CW)</li>
+                      <li>Re-skin UI & Configuration (Sprint Start + 4 CW)</li>
+                      <li>SAD (Sprint Start + 4 CW)</li>
+                      <li>IFS Documentation (Sprint Start + 6 CW) - Application X</li>
+                      <li>AID Documentation (Sprint Start + 6 CW) - Application X</li>
+                      <li>SOX Compliance Check (Sprint Start + 8 CW)</li>
+                      <li>CO-EX Assessment (Sprint Start + 2 CW)</li>
+                    </ul>
                   </p>
                 </div>
                   <div className="w-full">
